@@ -1,0 +1,3 @@
+https://api.github.com/repos/offscale/offregister_python/zipball#egg=offregister_python
+https://api.github.com/repos/offscale/offregister_circus/zipball#egg=offregister_circus
+https://api.github.com/repos/offscale/offutils/zipball#egg=offutils
