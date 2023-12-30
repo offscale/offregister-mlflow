@@ -1,8 +1,8 @@
 from __future__ import print_function
 
-from platform import python_version_tuple
+from sys import version_info
 
-if python_version_tuple()[0] == "2":
+if version_info[0] == 2:
     from cStringIO import StringIO
 else:
     from io import StringIO
@@ -13,12 +13,12 @@ import offregister_python.ubuntu as python_mod
 from fabric.contrib.files import exists
 from fabric.operations import put
 from nginx_parse_emit.emit import api_proxy_block
-from nginx_parse_emit.utils import merge_into, get_parsed_remote_conf
-from nginxparser import loads, dumps
+from nginx_parse_emit.utils import get_parsed_remote_conf, merge_into
+from nginxparser import dumps, loads
 from offregister_fab_utils.ubuntu.systemd import restart_systemd
 
 
-def install0(*args, **kwargs):
+def install0(c, *args, **kwargs):
     kwargs.setdefault("virtual_env", "/opt/venvs/mlflow")
 
     if not kwargs.get("skip_virtualenv", False):
