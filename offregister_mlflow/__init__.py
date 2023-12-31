@@ -9,6 +9,7 @@ import yaml
 
 __author__ = "Samuel Marks"
 __version__ = "0.0.4"
+__description__ = "This package follows the offregister specification to setup and serve Apache Airflow."
 
 
 def get_logger(name=None):
